@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-st.title("Counter-Strike: Global Offensive (CS:GO)")
+st.title("Counter-Strike: Global Offensive")
 
 df = pd.read_csv("csgo_task.csv")
 st.table(df.head())
