@@ -57,7 +57,7 @@ if button1:
     predict_stack = stack_clf.predict(input_data)[0]
     predict_dnn = dnn.predict(input_data)[0]
     
-    st.write(f'Результат предсказания KNN - {predict_gini_clf}')
+    st.write(f'Результат предсказания DesicionTreeClasiffier - {predict_gini_clf}')
     st.write(f'Результат предсказания K-Means - {predict_k_means}')
     st.write(f'Результат предсказания GradientBoostingClassifier - {predict_grad}')
     st.write(f'Результат предсказания BaggingClassifier - {predict_bag}')
@@ -71,9 +71,9 @@ elif button2:
     predict_stack = stack_clf.predict(X_test)
     predict_dnn = dnn.predict(X_test)
     
-    st.write(f'Результат метрики f1 - {f1_score(y_test, predict_knn)}')
-    st.write(f'Результат метрики rand - {rand_score(k_means.labels_, Y)}')
-    st.write(f'Результат метрики f1 - {f1_score(y_test, predict_grad)}')
-    st.write(f'Результат метрики f1 -{f1_score(y_test, predict_bag)}')
-    st.write(f'Результат метрики f1 - {f1_score(y_test, predict_stack)}')
-    st.write(f'Результат метрики f1 - {f1_score(y_test, np.around(dnn.predict(X_test, verbose=None)))}')
+    st.write(f'Результат метрики f1 модели DesicionTreeClasiffier- {f1_score(y_test, predict_knn)}')
+    st.write(f'Результат метрики rand модели KMeans - {rand_score(k_means.labels_, Y)}')
+    st.write(f'Результат метрики f1 модели GradientBoostingClassifier - {f1_score(y_test, predict_grad)}')
+    st.write(f'Результат метрики f1 модели BaggingClassifier -{f1_score(y_test, predict_bag)}')
+    st.write(f'Результат метрики f1 модели StackingClassifier - {f1_score(y_test, predict_stack)}')
+    st.write(f'Результат метрики f1 модели DNN - {f1_score(y_test, np.around(dnn.predict(X_test, verbose=None)))}')
